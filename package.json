@@ -1,23 +1,22 @@
 {
   "private": true,
-  "name": "svelte-tailwind-extension-boilerplate",
-  "version": "0.0.1",
+  "name": "lil-weather-ext",
+  "version": "1.0.0",
   "description": "A browser extension template built with Svelte and TailwindCSS",
   "keywords": [
     "chrome-extension",
     "web-extension",
-    "javascript",
+    "typescript",
     "svelte",
-    "rollup",
-    "boilerplate"
+    "weather"
   ],
-  "homepage": "https://github.com/kyrelldixon/svelte-tailwind-extension-boilerplate#readme",
+  "homepage": "https://github.com/kyrelldixon/lil-weather-ext#readme",
   "bugs": {
-    "url": "https://github.com/kyrelldixon/svelte-tailwind-extension-boilerplate/issues"
+    "url": "https://github.com/kyrelldixon/lil-weather-ext/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kyrelldixon/svelte-tailwind-extension-boilerplate.git"
+    "url": "git+https://github.com/kyrelldixon/lil-weather-ext.git"
   },
   "author": "Kyrell Dixon <kyrell@kyrelldixon.com>",
   "license": "MIT",

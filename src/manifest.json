@@ -1,18 +1,12 @@
 {
+  "name": "Lil Weather",
   "background": {
-    "scripts": [
-      "background/index.ts"
-    ]
+    "scripts": ["background/index.ts"]
   },
   "content_scripts": [
     {
-      "js": [
-        "content/index.ts"
-      ],
-      "matches": [
-        "https://*/*",
-        "http://*/*"
-      ]
+      "js": ["content/index.ts"],
+      "matches": ["https://*/*", "http://*/*"]
     }
   ],
   "browser_action": {
