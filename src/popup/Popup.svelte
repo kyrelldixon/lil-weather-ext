@@ -1,7 +1,7 @@
 <script>
-  import Counter from "./Counter.svelte";
+  import Weather from "./Weather.svelte";
 </script>
 
 <main class="p-2">
-  <Counter />
+  <Weather />
 </main>
