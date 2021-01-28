@@ -1,10 +1,23 @@
 <script lang="ts">
+  import { onDestroy, onMount } from "svelte";
   import { kelvinToFahrenheit } from "../utils/conversion";
-  import { getForecast } from "../weather";
+  import { getForecast, forecastStream, sendReady } from "../lib/weather";
   import Weather from "./Weather.svelte";
 
   let forecast = getForecast();
   let currentDay = 0;
+  let forecastSubscription;
+
+  onMount(() => {
+    sendReady();
+    forecastSubscription = forecastStream.subscribe(([_forecast]) => {
+      console.log(_forecast);
+    });
+  });
+
+  onDestroy(() => {
+    forecastSubscription.unsubscribe();
+  });
 
   const setCurrentDay = (day: number) => {
     currentDay = day;
