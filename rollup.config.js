@@ -1,5 +1,6 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import json from "@rollup/plugin-json";
 import svelte from "rollup-plugin-svelte";
 import zip from "rollup-plugin-zip";
 import postcss from "rollup-plugin-postcss";
@@ -38,6 +39,7 @@ export default {
     }),
     // https://github.com/rollup/plugins/tree/master/packages/commonjs
     commonjs(),
+    json(),
     typescript({ sourceMap: false }),
     // Empties the output dir before a new build
     emptyDir(),
