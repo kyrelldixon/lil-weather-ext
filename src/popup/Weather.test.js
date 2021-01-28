@@ -5,7 +5,7 @@ it("displays the temperature and description", () => {
   const props = { temperature: 46, description: "Mostly Sunny" };
   const { rerender } = render(Weather, props);
 
-  expect(screen.getByText(`${props.temperature} °`)).toBeInTheDocument;
+  expect(screen.getByText(`${props.temperature}°`)).toBeInTheDocument;
   expect(screen.getByText(props.description)).toBeInTheDocument;
 
   props.temperature = 80;
@@ -13,6 +13,6 @@ it("displays the temperature and description", () => {
 
   rerender(props);
 
-  expect(screen.getByText(`${props.temperature} °`)).toBeInTheDocument;
+  expect(screen.getByText(`${props.temperature}°`)).toBeInTheDocument;
   expect(screen.getByText(props.description)).toBeInTheDocument;
 });
