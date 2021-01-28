@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { kelvinToFahrenheit } from "../utils/conversion";
   import { getForecast } from "../weather";
   import Weather from "./Weather.svelte";
 
@@ -10,13 +11,12 @@
   };
 
   $: currentForecast = forecast.daily[currentDay];
+  $: currentTemp = Math.round(kelvinToFahrenheit(currentForecast.temp.day));
+  $: currentDescription = currentForecast.weather[0].description;
 </script>
 
 <div>
-  <Weather
-    temperature={Math.round(currentForecast.temp.day)}
-    description={currentForecast.weather[0].description}
-  />
+  <Weather temperature={currentTemp} description={currentDescription} />
   <div class="flex justify-between w-full mt-8">
     {#each forecast.daily as _, i}
       <button
