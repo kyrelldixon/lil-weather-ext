@@ -53,6 +53,7 @@
     "typescript": "^3.9.3"
   },
   "dependencies": {
+    "@extend-chrome/messages": "^1.2.0",
     "autoprefixer": "^10.2.1",
     "postcss": "^8.2.4",
     "svelte": "^3.31.2",
