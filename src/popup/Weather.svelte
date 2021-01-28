@@ -10,10 +10,13 @@
   <div class="space-y-1">
     <span
       data-testid="temperature"
-      class="text-4xl font-bold leading-none text-gray-800"
+      class="text-4xl font-bold leading-none text-gray-800 dark:text-gray-100"
       >{temperature}&deg;</span
     >
-    <p data-testid="forecast" class="text-lg leading-none opacity-70">
+    <p
+      data-testid="forecast"
+      class="text-lg leading-none text-gray-600 dark:text-gray-300"
+    >
       {description}
     </p>
   </div>

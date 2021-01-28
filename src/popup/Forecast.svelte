@@ -12,7 +12,7 @@
   $: currentForecast = forecast.daily[currentDay];
 </script>
 
-<main>
+<div>
   <Weather
     temperature={Math.round(currentForecast.temp.day)}
     description={currentForecast.weather[0].description}
@@ -27,4 +27,4 @@
       />
     {/each}
   </div>
-</main>
+</div>

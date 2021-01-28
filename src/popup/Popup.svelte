@@ -2,6 +2,6 @@
   import Forecast from "./Forecast.svelte";
 </script>
 
-<main class="p-8">
+<main class="dark:bg-gray-900 dark:text-gray-50">
   <Forecast />
 </main>
