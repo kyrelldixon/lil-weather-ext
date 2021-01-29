@@ -7,7 +7,7 @@
   <div
     class="w-16 h-16 rounded-full bg-gradient-to-t from-green-400 to-blue-500"
   />
-  <div class="space-y-1">
+  <div class="space-y-1 text-center">
     <span
       data-testid="temperature"
       class="text-4xl font-bold leading-none text-gray-800 dark:text-gray-100"
