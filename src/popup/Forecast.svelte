@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onDestroy, onMount } from "svelte";
   import { kelvinToFahrenheit } from "../utils/conversion";
-  import { getDailyForecast, forecastStream, sendReady } from "../lib/weather";
+  import { forecastStream, sendReady } from "../lib/weather";
   import Weather from "./Weather.svelte";
 import type { DailyForecast } from "../types";
 
