@@ -1,5 +1,5 @@
 import { getMessage } from "@extend-chrome/messages";
-import type { DailyForecast, DailyForecastResponse } from "../types";
+import type { DailyForecast, DailyForecastResponse, Coordinates } from "../types";
 
 const BASE_WEATHER_URL = "https://api.openweathermap.org/data/2.5/onecall"
 const APP_ID = globalThis.WEATHER_API_KEY
@@ -12,11 +12,6 @@ async function fetchJSON(url: string) {
     }
     throw new Error(res.statusText)
   })
-}
-
-interface Coordinates {
-  latitude: number;
-  longitude: number;
 }
 
 export async function getDailyForecast(coords: Coordinates) {

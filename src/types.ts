@@ -63,3 +63,8 @@ export interface DailyForecastResponse {
     }
   ];
 }
+
+export interface Coordinates {
+  latitude: number;
+  longitude: number;
+}
