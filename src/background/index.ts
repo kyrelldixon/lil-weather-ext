@@ -1,21 +1,8 @@
-import { sendForecast, getForecast, readyStream } from "../lib/weather";
-import type { Forecast } from "../types";
-
-const forecast = getForecast();
-
-const minimalForecast: Forecast = {
-  daily: forecast.daily.map(daily => ({
-    temp: {
-      day: daily.temp.day
-    },
-    weather: {
-      description: daily.weather[0].description
-    }
-  }))
-}
+import { sendForecast, getDailyForecast, readyStream } from "../lib/weather";
 
 readyStream.subscribe(() => {
-  sendForecast(minimalForecast);
+  const forecast = getDailyForecast();
+  sendForecast(forecast);
 });
 
 export {};
