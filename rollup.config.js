@@ -1,17 +1,21 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
+import typescript from "@rollup/plugin-typescript";
+import replace from "@rollup/plugin-replace";
 import svelte from "rollup-plugin-svelte";
 import zip from "rollup-plugin-zip";
 import postcss from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
 import sveltePreprocess from "svelte-preprocess";
-import typescript from "@rollup/plugin-typescript";
 import {
   chromeExtension,
   simpleReloader,
 } from "rollup-plugin-chrome-extension";
 import { emptyDir } from "rollup-plugin-empty-dir";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -24,6 +28,11 @@ export default {
   plugins: [
     // always put chromeExtension() before other plugins
     chromeExtension(),
+    replace({
+      globalThis: JSON.stringify({
+        WEATHER_API_KEY: process.env.WEATHER_API_KEY,
+      }),
+    }),
     simpleReloader(),
     svelte({
       preprocess: sveltePreprocess(),
