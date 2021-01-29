@@ -1,6 +1,6 @@
 <script lang="ts">
-  export let temperature = 46;
-  export let description = "Mostly Sunny";
+  export let temperature;
+  export let description;
 </script>
 
 <section class="flex flex-col items-center justify-center w-32 space-y-2">
