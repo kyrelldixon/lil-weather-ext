@@ -1,7 +1,9 @@
 import { sendForecast, getDailyForecast, readyStream } from "../lib/weather";
 
-readyStream.subscribe(() => {
-  const forecast = getDailyForecast();
+const austinCoordinates = { latitude: 30.2672, longitude: -97.7431 };
+
+readyStream.subscribe(async () => {
+  const forecast = await getDailyForecast(austinCoordinates);
   sendForecast(forecast);
 });
 
