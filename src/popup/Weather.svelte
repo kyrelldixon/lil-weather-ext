@@ -1,6 +1,7 @@
 <script lang="ts">
-  export let temperature;
-  export let description;
+  export let temperature: number;
+  export let description: string;
+  export let date: Date;
 </script>
 
 <section class="flex flex-col items-center justify-center w-32 space-y-2">

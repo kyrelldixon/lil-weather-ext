@@ -2,8 +2,8 @@
   import { onDestroy, onMount } from "svelte";
   import { kelvinToFahrenheit } from "../utils/conversion";
   import { forecastStream, sendReady } from "../lib/weather";
+  import type { DailyForecast } from "../types";
   import Weather from "./Weather.svelte";
-import type { DailyForecast } from "../types";
 
   let forecast: DailyForecast[] = [];
   let currentDay = 0;
@@ -25,14 +25,15 @@ import type { DailyForecast } from "../types";
     currentDay = day;
   };
 
-  $: currentForecast = forecast[currentDay];
-  $: currentTemp = currentForecast ? Math.round(kelvinToFahrenheit(currentForecast.temp)) : 0;
-  $: currentDescription = currentForecast?.description ?? '';
+  $: selectedForecast = forecast[currentDay];
+  $: temperature = selectedForecast ? Math.round(kelvinToFahrenheit(selectedForecast.temp)) : 0;
+  $: description = selectedForecast?.description ?? '';
+  $: date = selectedForecast?.datetime
 </script>
 
-{#if forecast}
+{#if selectedForecast}
   <div>
-    <Weather temperature={currentTemp} description={currentDescription} />
+    <Weather {date} {temperature} {description} />
     <div class="flex justify-between w-full mt-8">
       {#each forecast as _, i}
         <button
